@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400;700&family=Noto+Sans+Mono:wght@400;700&display=swap');
+
+body {
+    font-family: 'Chivo Mono', monospace;
+    background-color: #151515;
+    color: crimson;
+    user-select: none;
+}
+
+#loginContainer {
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    position: relative;
+}
+
+#lockedDoor {
+    background-image: url(img/icons8-porta-fechada-100.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #151515;
+    width: 100px;
+    height: 100px;
+    border: none;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+#lockedDoor:hover {
+    background-image: url(img/icons8-porta-fechada-100.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #151515;
+    width: 100px;
+    height: 100px;
+    border: none;
+    cursor: pointer;
+    filter: contrast(103%) brightness(120%);
+    transform: scale(110%);
+}
+
+#unlockedDoor {
+    background-image: url(img/icons8-porta-fechada-100.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #151515;
+    width: 100px;
+    height: 100px;
+    border: none;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+#unlockedDoor:hover {
+    background-image: url(img/icons8-porta-aberta-100.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #151515;
+    width: 100px;
+    height: 100px;
+    border: none;
+    cursor: pointer;
+    filter: contrast(103%) brightness(120%);
+    transform: scale(110%);
+}
+
+#password {
+    background-color: #151515;
+    background-image: url(img/chave.png);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    color: crimson;
+    border: 2px solid crimson;
+    outline-style: none;
+    padding: 12px 20px 12px 50px;
+    height: 25px;
+    font-size: large;
+}
+
+span {
+    filter: opacity(0%);
+    transition: 0.3s;
+}
+
+#login {
+    text-align: center;
+    position: relative;
+}
+
+#hint {
+    text-align: center;
+    user-select: text;
+    font-size: small;
+    display: none;
+    max-width: 30%;
+    position: absolute;
+    top: 60%;
+    animation: fadeIn 1s;
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+    
+}
+
+#hint2 {
+    text-align: center;
+    user-select: text;
+    font-size: small;
+    display: none;
+    max-width: 30%;
+    position: absolute;
+    bottom: 60%;
+    animation: fadeIn 1s;
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+    
+}
+
+
+#submit {
+    background-color: crimson;
+    background-image: url(img/cadeado.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    width: 50px;
+    height: 53px;
+    border: none;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: #151515;
+    background-image: url(img/cadeadoRosa.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    width: 50px;
+    height: 53px;
+    border: 2px solid;
+    border-left: 0;
+    border-color: crimson;
+    cursor: pointer;
+}
+
+#foldersContainer {
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: wrap;
+}
+
+figcaption,
+a {
+    text-decoration: none !important;
+    font-weight: 400;
+    text-align: center;
+    color: crimson;
+}
+
+
+#file1,
+#file2,
+#file3,
+#file4 {
+    transition: 0.3s;
+}
+
+#file1:hover,
+#file2:hover,
+#file3:hover,
+#file4:hover {
+    border: none;
+    filter: contrast(103%) brightness(120%);
+    transform: scale(105%);
+    padding: 5px;
+    transition: 0.3s;
+}

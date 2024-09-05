@@ -1,0 +1,225 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400;700&family=Noto+Sans+Mono:wght@400;700&display=swap");
+
+body {
+  font-family: "Chivo Mono", monospace;
+  background-color: #151515;
+  text-align: justify;
+  user-select: none;
+  overflow: hidden;
+  color: crimson;
+}
+
+.inv {
+  visibility: hidden;
+}
+
+.container {
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#message {
+  cursor: grab;
+  z-index: 1;
+  opacity: 1;
+}
+
+#exit-tab {
+  display: flex;
+}
+
+#exit-bar {
+  padding: 7px;
+  width: 100%;
+  border: 2px solid;
+  border-bottom: 0;
+  border-color: crimson;
+  background-color: #151515;
+}
+
+#exit-bar::before {
+  content: url(../../img/icons8-notes-30.png);
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#exit {
+  font-family: "Chivo Mono", monospace;
+  background: none;
+  background-color: #151515;
+  text-align: center;
+  font-size: larger;
+  font-weight: 700;
+  border-left: 0;
+  border-top: 2px solid;
+  border-bottom: 0;
+  border-right: 2px solid;
+  border-color: crimson;
+  color: crimson;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#exit:hover {
+  background-color: crimson;
+  color: #151515;
+  transition: 0.2s;
+}
+
+#text {
+  border: 2px solid;
+  border-color: crimson;
+  background-color: #151515;
+  padding: 20px;
+  white-space: pre-wrap;
+  color: crimson;
+  text-align: justify;
+}
+
+#heart {
+  background-image: url(../../img/icons8-filled-heart-64.png);
+  width: 64px;
+  height: 64px;
+  z-index: -2;
+  animation: heartBeat 0.6s linear infinite;
+}
+
+#heartInvButton {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  z-index: 0;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(110%);
+  }
+
+  80% {
+    transform: scale(100%);
+  }
+
+  100% {
+    transform: scale(80%);
+  }
+}
+
+#grow {
+  background-color: crimson;
+  display: none;
+  border-radius: 1.5rem;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 2;
+  animation: grow 3s ease forwards;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(300);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+
+#dialogue {
+  overflow: hidden;
+  display: none;
+  color: crimson;
+  font-size: larger;
+  font-weight: 400;
+  opacity: 0;
+  z-index: 4;
+  border-right: 0.15em solid crimson;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: normal;
+  animation:
+    blink-caret 0.75s step-end infinite,
+    fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: crimson;
+  }
+
+}
+
+.buttonContainer {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 16em; 
+  width: 100%;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+#nextButton {
+  width: 35px;
+  height: 35px;
+  margin: 0 10px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+#nextButton {
+  background-image: url(../../img/icons8-próximo-50.png);
+}
+
+#nextButton:hover {
+  background-image: url(../../img/icons8-próximo-inverso-50.png);
+}
+
+#nextButton.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+#chat {
+  display: none;
+}
